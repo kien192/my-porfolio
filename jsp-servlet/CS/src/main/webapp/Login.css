@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.error-label {
+  display: block;
+  min-height: 20px; /* đảm bảo luôn có khoảng trống */
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+
+
+  <!-- Ô lỗi luôn tồn tại -->
+  <label id="error" cla	s="error-label">&nbsp;</label>
+  
+  
+  
+  <%@ page contentType="text/html; charset=UTF-8" %>
+<%
+  String contextPath = request.getContextPath();
+%>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="<%= contextPath %>/css/style.css">
+  <script src="<%= contextPath %>/js/login.js"></script>
+</head>
+<body>
+  ...
+</body>
+</html>
