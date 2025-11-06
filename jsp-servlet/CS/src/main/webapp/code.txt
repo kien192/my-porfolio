@@ -1,0 +1,57 @@
+public Customer findById(String customerId) {
+    Customer c = null;
+    String sql = "SELECT * FROM customer WHERE customer_id = ?";
+    try (Connection conn = getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+
+        ps.setString(1, customerId);
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            c = new Customer();
+            c.setCustomerId(rs.getString("customer_id"));
+            c.setCustomerName(rs.getString("customer_name"));
+            c.setSex(rs.getInt("sex"));
+            c.setBirthday(rs.getDate("birthday"));
+            // Thêm các cột khác (address, phone...) nếu có
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return c;
+}
+
+
+public Customer findById(String customerId) {
+    Customer c = null;
+    String sql = "SELECT * FROM customer WHERE customer_id = ?";
+    try (Connection conn = getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+
+        ps.setString(1, customerId);
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            c = new Customer();
+            c.setCustomerId(rs.getString("customer_id"));
+            c.setCustomerName(rs.getString("customer_name"));
+            c.setSex(rs.getInt("sex"));
+            c.setBirthday(rs.getDate("birthday"));
+            // Thêm các cột khác (address, phone...) nếu có
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return c;
+}
+
+
+https://ibytecode.com/blog/pagination-in-servlet-and-jsp/
+
+https://www.tutorialspoint.com/jsp/jsp_session_tracking.htm
+https://www.studytonight.com/servlet/pagination-example-in-servlet.php
+https://coderanch.com/t/352097/java/checkbox-jsp
+https://www.baeldung.com/java-servlet-cookies-session
+https://cystack.net/vi/tutorial/quan-ly-session-trong-java
