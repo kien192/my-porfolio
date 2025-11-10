@@ -55,3 +55,4 @@ https://www.studytonight.com/servlet/pagination-example-in-servlet.php
 https://coderanch.com/t/352097/java/checkbox-jsp
 https://www.baeldung.com/java-servlet-cookies-session
 https://cystack.net/vi/tutorial/quan-ly-session-trong-java
+https://hanam88.com/kho-tai-lieu/63/240/java-web-loc-phan-trang-tim-kiem-du-lieu-voi-sql-server-trong-jsp-servlet.html?utm_source=chatgpt.com
