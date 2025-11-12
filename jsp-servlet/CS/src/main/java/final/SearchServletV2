@@ -1,0 +1,33 @@
+package controller;
+
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+import java.io.IOException;
+import model.Customer;
+import dao.CustomerDao;
+
+@WebServlet("/CustomerEditServlet")
+public class CustomerEditServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String customerId = request.getParameter("customerId");
+        String mode = request.getParameter("mode");
+
+        if (customerId != null) {
+            Customer c = CustomerDao.findById(customerId);
+            request.setAttribute("customer", c);
+        }
+
+        request.setAttribute("mode", mode != null && mode.equals("add") ? "add" : "edit");
+
+        // breadcrumb
+        request.setAttribute("breadcrumb", "Login > <a href='CustomerSearchServlet?"
+                + (request.getSession().getAttribute("lastSearchParams") == null ? "" :
+                request.getSession().getAttribute("lastSearchParams")) + "'>Search</a> > Edit");
+
+        request.getRequestDispatcher("edit.jsp").forward(request, response);
+    }
+}

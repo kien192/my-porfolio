@@ -1,0 +1,19 @@
+document.getElementById('customerForm').addEventListener('submit', function(e) {
+    const email = document.getElementById('email').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+        e.preventDefault(); // ngăn form submit
+        alert("Please enter a valid email address.");
+        return false;
+    }
+});
+
+String email = request.getParameter("email").trim();
+String emailPattern = "^[\\w.-]+@[\\w.-]+\\.[A-Za-z]{2,6}$";
+
+if (email == null || !email.matches(emailPattern)) {
+    request.setAttribute("error", "Invalid email address.");
+    request.getRequestDispatcher("/editCustomer.jsp").forward(request, response);
+    return;
+}
