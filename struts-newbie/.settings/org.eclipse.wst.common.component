@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="struts-newbie">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/lib" source-path="/WEB-INF/lib"/>
+        <wb-resource deploy-path="/WEB-INF" source-path="/WEB-INF"/>
+        <wb-resource deploy-path="/" source-path="/pages"/>
+        <property name="context-root" value="struts-newbie"/>
+        <property name="java-output-path" value="/struts-newbie/build/classes"/>
+    </wb-module>
+</project-modules>
