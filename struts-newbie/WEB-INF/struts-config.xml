@@ -30,7 +30,7 @@
 
 	<form-beans>
 
-			<form-bean name="loginForm" type="form.LoginForm" />
+		<form-bean name="loginForm" type="form.LoginForm" />
 	</form-beans>
 
 
@@ -48,19 +48,19 @@
 
 	<action-mappings>
 		<!-- Default "Welcome" action -->
-		
-		
-		
+
+
+
 		<!-- Forwards to Welcome.jsp -->
 		<action path="/home" forward="/T001.jsp" />
 
 		<action path="/T001" type="action.LoginAction" name="loginForm"
-			scope="request" validate="false" >
+			scope="request" validate="true" input="/T001.jsp">
 
 			<forward name="fail" path="/T001.jsp" />
 			<forward name="success" path="/Welcome.jsp" />
 		</action>
-		
+
 
 	</action-mappings>
 

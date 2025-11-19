@@ -17,8 +17,6 @@ public class UserDto {
 		this.password = password;
 	}
 
-
-
 	public String getUserId() {
 		return userId;
 	}
@@ -34,5 +32,7 @@ public class UserDto {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+
 
 }

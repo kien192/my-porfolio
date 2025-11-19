@@ -40,6 +40,21 @@
                     </var>
             </field>
         </form>
+        
+          <form name="loginForm">
+            <field
+                property="txtUserId"
+                depends="required">
+                    <arg key="loginForm.txtUserId"/>
+                    <msg name="required" key="errors.txtUserId"/>
+            </field>
+            <field
+                property="txtPassword"
+                depends="required">
+                    <arg key="loginForm.txtPassword"/>
+                   	<msg name="required" key="errors.txtPassword"></msg>
+            </field>
+        </form>
 
     </formset>
 

@@ -11,8 +11,8 @@
 
 	<html:form action="T001">
 
-		<div>
-			<bean:write name="loginForm" property="lblMessage" />
+		<div id="errorZone">
+			<html:errors />
 		</div>
 
 		<table>
@@ -21,15 +21,12 @@
 
 				<td><html:text property="txtUserId" styleClass="inputField"
 						styleId="txtUserId"></html:text></td>
-
-
-
 			</tr>
 
 			<tr>
-				<td>UserId:</td>
+				<td>Password:</td>
 
-				<td><html:password property="txtPassword"></html:password></td>
+				<td><html:password styleId="txtPassword" property="txtPassword"></html:password></td>
 
 			</tr>
 
@@ -37,7 +34,7 @@
 		</table>
 		<div>
 			<html:submit property="btnLogin" value="Login" />
-			<html:reset property="btnClear" value="Clear" />
+			<input type="button" value="Clear" onclick="clearForm()" />
 
 		</div>
 
@@ -45,4 +42,29 @@
 	</html:form>
 
 </body>
+<script>
+	function clearForm() {
+
+		//Cách này là bố của chắc chắn: Tóm đầu theo ID và ép về rỗng
+		var uInput = document.getElementById("txtUserId");
+		var pInput = document.getElementById("txtPassword");
+
+		if (uInput)
+			uInput.value = ""; // Ép về rỗng
+		if (pInput)
+			pInput.value = ""; // Ép về rỗng
+
+		// Xử lý cái error message (cho nó biến mất luôn)
+		var errorDiv = document.getElementById("errorZone");
+		if (errorDiv) {
+			errorDiv.style.display = "none"; // Ẩn đi
+			// Hoặc sếp thích xóa nội dung thì dùng: errorDiv.innerHTML = "";
+		}
+
+		// Focus lại cho tiện tay gõ
+		if (uInput)
+			uInput.focus();
+
+	}
+</script>
 </html:html>
