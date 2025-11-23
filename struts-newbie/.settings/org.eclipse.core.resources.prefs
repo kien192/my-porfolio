@@ -1,5 +1,12 @@
 eclipse.preferences.version=1
+encoding//pages/Classic.jsp=UTF-8
 encoding//pages/T001.jsp=UTF-8
 encoding//src/action/LoginAction.java=UTF-8
+encoding//src/action/SecureAction.java=UTF-8
+encoding//src/dao/BaseDao.java=UTF-8
+encoding//src/dao/CustomerDao.java=UTF-8
+encoding//src/db/DBUtil.java=UTF-8
+encoding//src/db/Properties.java=UTF-8
 encoding//src/dto/UserDto.java=UTF-8
 encoding//src/form/LoginForm.java=UTF-8
+encoding//src/util/EncodingRequestProcessor.java=UTF-8

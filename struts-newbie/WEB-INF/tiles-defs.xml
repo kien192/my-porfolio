@@ -5,38 +5,41 @@
        "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
 
 
-<!--
-     This is a blank Tiles definition file with a commented example.
--->
+<!-- This is a blank Tiles definition file with a commented example. -->
 
 <tiles-definitions>
 
-    <!-- sample tiles definitions
-    <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp">
-        <put name="title"  value="Sample Page Title" />
-        <put name="header" value="/common/header.jsp" />
-        <put name="menu"   value=".mainMenu" />
-        <put name="footer" value="/common/footer.jsp" />
-        <put name="body"   value=".portal.body" />
-    </definition>
+	<!-- sample tiles definitions <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp"> 
+		<put name="title" value="Sample Page Title" /> <put name="header" value="/common/header.jsp" 
+		/> <put name="menu" value=".mainMenu" /> <put name="footer" value="/common/footer.jsp" 
+		/> <put name="body" value=".portal.body" /> </definition> <definition name=".mainMenu" 
+		path="/common/layouts/vboxLayout.jsp" > <putList name="list" > <add value=".menu.links" 
+		/> <add value=".menu.taglib.references" /> <add value=".menu.printer.friendly" 
+		/> <add value=".menu.old.documents" /> </putList> </definition> <definition 
+		name="aPage" extends=".mainLayout"> <put name="title" value="Another Title" 
+		/> <put name="body" value=".aPage.body" /> </definition> end samples -->
 
-    <definition name=".mainMenu" path="/common/layouts/vboxLayout.jsp" >
-        <putList name="list" >
-            <add value=".menu.links" />
-            <add value=".menu.taglib.references" />
-            <add value=".menu.printer.friendly" />
-            <add value=".menu.old.documents" />
-      </putList>
-    </definition>
+	<definition name="base.layout" path="/Classic.jsp">
+		<put name="title" value="Customer System" />
+		<put name="header" value="/Header.jsp" />
+		<put name="breadcrumb" value="/Breadcrumb.jsp" />
+		<put name="navigation" value="/Logout.jsp" />
+		<put name="content" value="/default.jsp" />
+		<put name="footer" value="/Footer.jsp" />
+        <put name="js" value="/default.js"/>
+	</definition>
 
-    <definition name="aPage" extends=".mainLayout">
-        <put name="title"  value="Another Title" />
-        <put name="body"   value=".aPage.body" />
-    </definition>
+	<definition name="T001.page" extends="base.layout">
+		<put name="content" value="/T001.jsp" />
+	</definition>
 
-    end samples -->
+	<definition name="T002.page" extends="base.layout">
+		<put name="content" value="/T002.jsp" />
+         <put name="js" value="/T002.js"/>
+	</definition>
 
-    <definition name="${YOUR_DEFINITION_HERE}">
-    </definition>
+	<definition name="T003.page" extends="base.layout">
+		<put name="content" value="/T003.jsp" />
+	</definition>
 
 </tiles-definitions>
